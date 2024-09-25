@@ -1,0 +1,21 @@
+﻿@model GetSheetsAPITestMVC.Models.Employee
+
+<h2>Employee Details</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Employee ID</dt>
+        <dd class="col-sm-10">@Model.EmployeeID</dd>
+
+        <dt class="col-sm-2">Project</dt>
+        <dd class="col-sm-10">@Model.Project</dd>
+
+        <dt class="col-sm-2">Start Date</dt>
+        <dd class="col-sm-10">@Model.Start.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">End Date</dt>
+        <dd class="col-sm-10">@Model.End.ToShortDateString()</dd>
+    </dl>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GetSheetsAPITestMVC.Models.Employee>
+
+<h2>Employee List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>EmployeeID</th>
+            <th>Name</th>
+            <th>Project</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeID</td>
+                <td>@employee.Name</td>
+                <td>@employee.Project</td>
+                <td>@employee.Start.ToShortDateString()</td>
+                <td>@employee.End.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@employee.EmployeeID">View Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
